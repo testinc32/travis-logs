@@ -25,7 +25,7 @@ module Travis
         Travis::Addons.register
 
         Travis::LogSubscriber::ActiveRecordMetrics.attach
-        Travis::Memory.new(:logs).report_periodically if Travis.env == 'production'
+        Travis::Memory.new(:logs).report_periodically if Travis.env == 'production' && Travis.config.metrics.report
       end
 
       def run
