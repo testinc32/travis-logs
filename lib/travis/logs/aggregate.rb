@@ -9,11 +9,8 @@ Travis::Exceptions::Reporter.start
 Travis::Async.enabled = true
 Travis::Async::Sidekiq.setup(Travis.config.redis.url, Travis.config.sidekiq)
 
-if Travis.env != 'production'
-  Travis::Notification.setup
-elsif Travis.config.metrics.report
-  Travis::Instrumentation.setup
-end
+Travis::Metrics.setup
+Travis::Notification.setup if Travis.env != 'production'
 
 def aggregate_logs
   Travis.run_service(:logs_aggregate)

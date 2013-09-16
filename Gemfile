@@ -1,9 +1,9 @@
 source 'https://rubygems.org'
 
-ruby '1.9.3', engine: 'jruby', engine_version: '1.7.2'
+ruby '1.9.3', engine: 'jruby', engine_version: '1.7.4'
 
-gem 'travis-core',        github: 'travis-ci/travis-core'
-gem 'travis-support',     github: 'travis-ci/travis-support'
+gem 'travis-core',        github: 'travis-ci/travis-core', branch: 'sf-te'
+gem 'travis-support',     github: 'travis-ci/travis-support', branch: 'sf-te'
 gem 'travis-sidekiqs',    github: 'travis-ci/travis-sidekiqs', require: nil
 
 gem 'hubble',             github: 'roidrage/hubble'
@@ -13,7 +13,7 @@ gem 'signature',          '~> 0.1.6'
 gem 'sidekiq'
 gem 'aws-sdk'
 
-gem 'pusher', '~> 0.11.3'
+gem 'pusher', '~> 0.12.0'
 
 # platforms :mri do
 #   gem 'amqp'

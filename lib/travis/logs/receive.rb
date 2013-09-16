@@ -21,6 +21,7 @@ module Travis
 
         Travis::Database.connect
         Travis::Exceptions::Reporter.start
+        Travis::Metrics.setup
         Travis::Notification.setup
         Travis::Addons.register
 
