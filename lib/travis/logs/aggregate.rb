@@ -19,5 +19,5 @@ rescue Exception => e
 end
 
 run_periodically(Travis.config.logs.intervals.vacuum || 10) do
-  aggregate_logs if Travis::Features.feature_active?(:log_aggregation)
+  aggregate_logs unless Travis::Features.feature_deactivated?(:log_aggregation)
 end.join
