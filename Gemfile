@@ -23,7 +23,7 @@ gem 'pusher', '~> 0.12.0'
 # can't be removed yet, even though we're on jruby 1.6.7 everywhere
 # this is due to Invalid gemspec errors
 gem 'rollout',            github: 'jamesgolick/rollout', ref: 'v1.1.0'
-gem 'hot_bunnies',        '~> 1.3.4'
+gem 'march_hare'
 gem 'jruby-openssl',      '~> 0.7.4'
 
 # can't be upgraded so far because it starts raising exceptions like:
