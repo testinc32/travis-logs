@@ -27,6 +27,8 @@ module Travis
 
         Travis::LogSubscriber::ActiveRecordMetrics.attach
         Travis::Memory.new(:logs).report_periodically if Travis.env == 'production' && Travis.config.metrics.report
+
+        declare_exchanges
       end
 
       def run
@@ -39,6 +41,11 @@ module Travis
 
         def receive(payload)
           Travis.run_service(:logs_receive, data: payload)
+        end
+
+        def declare_exchanges
+          channel = Travis::Amqp.connection.create_channel
+          channel.exchange 'reporting', durable: true, auto_delete: false, type: :topic
         end
     end
   end
