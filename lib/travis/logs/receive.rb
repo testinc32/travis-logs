@@ -1,6 +1,7 @@
 require 'multi_json'
 
 require 'travis'
+require 'travis/support/amqp'
 require 'core_ext/module/load_constants'
 require 'timeout'
 require 'sidekiq'
