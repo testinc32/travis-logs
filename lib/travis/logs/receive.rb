@@ -2,6 +2,7 @@ require 'multi_json'
 
 require 'travis'
 require 'travis/support/amqp'
+require 'travis/support/async/sidekiq' # te pipes pusher log updates through travis-tasks atm
 require 'core_ext/module/load_constants'
 require 'timeout'
 require 'sidekiq'
@@ -18,7 +19,9 @@ module Travis
 
         Travis::Async.enabled = true
         Travis::Amqp.config = Travis.config.amqp
-        Travis::Addons::Pusher::Task.run_local = true # don't pipe log updates through travis_tasks
+
+        # Travis::Addons::Pusher::Task.run_local = true # don't pipe log updates through travis_tasks
+        Travis::Async::Sidekiq.setup(Travis.config.redis.url, Travis.config.sidekiq)
 
         Travis::Database.connect
         Travis::Exceptions::Reporter.start
