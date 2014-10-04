@@ -44,7 +44,7 @@ GIT
 
 GIT
   remote: git://github.com/travis-ci/travis-support.git
-  revision: 243147664e49a168b0c2d3c40c04a786bf664f37
+  revision: a1604ecf3dd16d7e4c88401de74233aed8434746
   branch: sf-te
   specs:
     travis-support (0.0.1)
@@ -88,6 +88,7 @@ GEM
       multi_json (~> 1.0)
     addressable (2.3.5)
     arel (3.0.2)
+    atomic (1.1.14)
     atomic (1.1.14-java)
     avl_tree (1.1.3)
     aws-sdk (1.8.1.2)
@@ -130,6 +131,7 @@ GEM
       guard (>= 1.1)
     hashr (0.0.22)
     hike (1.2.3)
+    hitimes (1.2.1)
     hitimes (1.2.1-java)
     httpclient (2.3.4.1)
     i18n (0.6.5)
@@ -137,6 +139,7 @@ GEM
     journey (1.0.4)
     jruby-openssl (0.7.7)
       bouncy-castle-java (>= 1.5.0146.1)
+    json (1.8.0)
     json (1.8.0-java)
     listen (0.7.2)
     lumberjack (1.0.2)
@@ -158,8 +161,13 @@ GEM
     net-http-persistent (2.9)
     net-http-pipeline (1.0.1)
     newrelic_rpm (3.3.5)
+    nokogiri (1.5.6)
     nokogiri (1.5.6-java)
     polyglot (0.3.3)
+    pry (0.9.11.4)
+      coderay (~> 1.0.5)
+      method_source (~> 0.8)
+      slop (~> 3.4)
     pry (0.9.11.4-java)
       coderay (~> 1.0.5)
       method_source (~> 0.8)
