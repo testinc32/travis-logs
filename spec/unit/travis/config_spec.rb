@@ -1,3 +1,5 @@
+require 'travis/config'
+require 'travis/config/url'
 require 'active_support/core_ext/hash/slice'
 
 describe Travis::Config do
