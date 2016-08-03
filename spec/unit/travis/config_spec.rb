@@ -1,4 +1,3 @@
-require 'spec_helper'
 require 'active_support/core_ext/hash/slice'
 
 describe Travis::Config do
