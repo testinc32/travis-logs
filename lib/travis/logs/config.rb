@@ -1,5 +1,6 @@
 require 'travis/config'
 require 'travis/support'
+require 'travis/config/url'
 
 module Travis
   module Logs
